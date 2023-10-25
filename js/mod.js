@@ -2,7 +2,7 @@ let modInfo = {
 	name: "The Test Tree",
 	id: "thetestmod",
 	author: "Gurasic",
-	pointsName: "points",
+	pointsName: "Energy",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
@@ -13,14 +13,15 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "0.1",
+	name: "The Start",
 }
 
-let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+let changelog = `<h1>Changelog:</h1><br><br>
+	<h3>v0.1</h3><br>
+		- Added a lot of stuff.<br>
+		- Fixed a lot of buggs.<br>
+		- Added more bugs to fix later`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -43,7 +44,9 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade('p', 11)) gain = gain.times(2)
 	return gain
+	
 }
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
